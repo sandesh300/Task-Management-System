@@ -23,7 +23,7 @@ public class Task {
     private String task;
     private Boolean completed;
     private String taskCreatedAt;
-    @ManyToMany
+    @ManyToOne
     @JsonIgnore
     private User user;
 }
