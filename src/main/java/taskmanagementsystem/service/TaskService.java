@@ -17,4 +17,6 @@ public interface TaskService {
     public void deleteTask(Integer id);
 
     ApiResponse doneTask(Integer id);
+
+    ApiResponse pendingTask(Integer id);
 }

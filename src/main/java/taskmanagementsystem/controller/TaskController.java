@@ -50,4 +50,9 @@ public class TaskController {
     public ResponseEntity<ApiResponse> completedTodo(@PathVariable Integer id) {
         return  ResponseEntity.ok(service.doneTask(id));
     }
+
+    @PatchMapping("/{id}/task-pending")
+    public ResponseEntity<ApiResponse> inCompletedTodo(@PathVariable Integer id){
+        return ResponseEntity.ok(service.pendingTask(id));
+    }
 }
