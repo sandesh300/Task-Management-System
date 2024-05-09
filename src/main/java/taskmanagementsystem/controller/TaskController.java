@@ -39,4 +39,10 @@ public class TaskController {
     public ResponseEntity<ApiResponse> updateTask(@PathVariable Integer id, @Valid @RequestBody Task task) {
         return new ResponseEntity<>(service.updateTask(task, id), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteTaskById(@PathVariable Integer id) {
+        service.deleteTask(id);
+        return ResponseEntity.ok("Task deleted successfully");
+    }
 }
