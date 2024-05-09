@@ -11,4 +11,7 @@ public interface TaskService {
     ApiResponse getTaskById(Integer taskId);
 
     List<Task> getAllTasks(Long userId);
+
+    ApiResponse updateTask(Task task, Integer id);
+
 }

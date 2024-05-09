@@ -34,4 +34,9 @@ public class TaskController {
     public ResponseEntity<List<Task>> getAllTasks(@PathVariable("id") Long userId) {
         return new ResponseEntity<>(service.getAllTasks(userId), HttpStatus.OK);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ApiResponse> updateTask(@PathVariable Integer id, @Valid @RequestBody Task task) {
+        return new ResponseEntity<>(service.updateTask(task, id), HttpStatus.OK);
+    }
 }
