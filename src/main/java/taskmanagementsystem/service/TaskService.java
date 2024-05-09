@@ -5,4 +5,6 @@ import taskmanagementsystem.model.Task;
 
 public interface TaskService {
     ApiResponse createTask(Task task, Long userId);
+
+    ApiResponse getTaskById(Integer taskId);
 }

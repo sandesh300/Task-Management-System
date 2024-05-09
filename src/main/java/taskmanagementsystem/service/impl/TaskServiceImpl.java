@@ -21,10 +21,18 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public ApiResponse createTask(Task task, Long userId) {
-        User user = userRepository.findById(userId).orElseThrow(()->new ResourceNotFoundException("User not found, Id: "+userId));
+        User user = userRepository.findById(userId).orElseThrow(()->new ResourceNotFoundException("User not found, Id: " + userId));
         task.setUser(user);
 
         Task savedTask = taskRepository.save(task);
         return new ApiResponse("Task Saved", savedTask);
     }
+
+    @Override
+    public ApiResponse getTaskById(Integer taskId) {
+        Task task = taskRepository.findById(taskId).orElseThrow(()-> new ResourceNotFoundException("Task not found, Id: " + taskId));
+        return new ApiResponse("Found task", task);
+    }
+
+
 }

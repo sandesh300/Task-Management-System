@@ -8,6 +8,8 @@ import taskmanagementsystem.dto.ApiResponse;
 import taskmanagementsystem.model.Task;
 import taskmanagementsystem.service.TaskService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/tasks")
 public class TaskController {
@@ -23,5 +25,9 @@ public class TaskController {
         return new ResponseEntity<>(service.createTask(task, userId), HttpStatus.CREATED);
     }
 
+    @GetMapping("/{taskId}")
+    public ResponseEntity<ApiResponse> getTaskById(@PathVariable Integer taskId) {
+       return new ResponseEntity<>(service.getTaskById(taskId), HttpStatus.OK);
+    }
 
 }
