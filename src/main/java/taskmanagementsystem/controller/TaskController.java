@@ -30,4 +30,8 @@ public class TaskController {
        return new ResponseEntity<>(service.getTaskById(taskId), HttpStatus.OK);
     }
 
+    @GetMapping("/user/{id}")
+    public ResponseEntity<List<Task>> getAllTasks(@PathVariable("id") Long userId) {
+        return new ResponseEntity<>(service.getAllTasks(userId), HttpStatus.OK);
+    }
 }

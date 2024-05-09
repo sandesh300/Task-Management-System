@@ -9,6 +9,8 @@ import taskmanagementsystem.repository.TaskRepository;
 import taskmanagementsystem.repository.UserRepository;
 import taskmanagementsystem.service.TaskService;
 
+import java.util.List;
+
 @Service
 public class TaskServiceImpl implements TaskService {
     private final TaskRepository taskRepository;
@@ -32,6 +34,13 @@ public class TaskServiceImpl implements TaskService {
     public ApiResponse getTaskById(Integer taskId) {
         Task task = taskRepository.findById(taskId).orElseThrow(()-> new ResourceNotFoundException("Task not found, Id: " + taskId));
         return new ApiResponse("Found task", task);
+    }
+
+    @Override
+    public List<Task> getAllTasks(Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(()->new ResourceNotFoundException("User not found, Id" + userId));
+        List<Task> taskList = taskRepository.findAllByUserId(user.getId());
+        return taskList;
     }
 
 
