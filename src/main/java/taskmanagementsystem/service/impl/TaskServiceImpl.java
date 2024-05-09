@@ -58,5 +58,12 @@ public class TaskServiceImpl implements TaskService {
       taskRepository.delete(task);
     }
 
+    @Override
+    public ApiResponse doneTask(Integer id) {
+        Task task = taskRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Task not found, Id" +id));
+        task.setCompleted(true);
+        return new ApiResponse("Task done", taskRepository.save(task));
+    }
+
 
 }

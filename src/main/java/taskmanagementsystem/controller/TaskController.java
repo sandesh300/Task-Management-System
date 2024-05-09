@@ -45,4 +45,9 @@ public class TaskController {
         service.deleteTask(id);
         return ResponseEntity.ok("Task deleted successfully");
     }
+
+    @PatchMapping("/{id}/task-done")
+    public ResponseEntity<ApiResponse> completedTodo(@PathVariable Integer id) {
+        return  ResponseEntity.ok(service.doneTask(id));
+    }
 }

@@ -15,4 +15,6 @@ public interface TaskService {
     ApiResponse updateTask(Task task, Integer id);
 
     public void deleteTask(Integer id);
+
+    ApiResponse doneTask(Integer id);
 }
