@@ -1,12 +1,12 @@
 package taskmanagementsystem.service.impl;
 
-import org.springframework.stereotype.Service;
 import taskmanagementsystem.dto.ApiResponse;
 import taskmanagementsystem.exception.ResourceNotFoundException;
 import taskmanagementsystem.model.Task;
 import taskmanagementsystem.model.User;
 import taskmanagementsystem.repository.TaskRepository;
 import taskmanagementsystem.repository.UserRepository;
+import org.springframework.stereotype.Service;
 import taskmanagementsystem.service.TaskService;
 
 import java.util.List;
@@ -48,14 +48,15 @@ public class TaskServiceImpl implements TaskService {
         Task foundTask = taskRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Task not found, Id" + id));
         foundTask.setTask(task.getTask());
         foundTask.setCompleted(task.getCompleted());
+        foundTask.setDetails(task.getDetails()); // Set details
         Task updatedTask = taskRepository.save(foundTask);
         return new ApiResponse("Task updated!",updatedTask);
     }
 
     @Override
     public void deleteTask(Integer id) {
-      Task task = taskRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Task not found, Id" + id));
-      taskRepository.delete(task);
+        Task task = taskRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Task not found, Id" + id));
+        taskRepository.delete(task);
     }
 
     @Override
@@ -69,8 +70,6 @@ public class TaskServiceImpl implements TaskService {
     public ApiResponse pendingTask(Integer id) {
         Task task = taskRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Task Not Found, Id: " + id));
         task.setCompleted(false);
-        return new ApiResponse("Task done", taskRepository.save(task));
+        return new ApiResponse("Task pending", taskRepository.save(task));
     }
-
-
 }

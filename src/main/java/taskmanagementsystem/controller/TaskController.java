@@ -1,13 +1,13 @@
 package taskmanagementsystem.controller;
 
+
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 import taskmanagementsystem.dto.ApiResponse;
 import taskmanagementsystem.model.Task;
 import taskmanagementsystem.service.TaskService;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
@@ -27,7 +27,7 @@ public class TaskController {
 
     @GetMapping("/{taskId}")
     public ResponseEntity<ApiResponse> getTaskById(@PathVariable Integer taskId) {
-       return new ResponseEntity<>(service.getTaskById(taskId), HttpStatus.OK);
+        return new ResponseEntity<>(service.getTaskById(taskId), HttpStatus.OK);
     }
 
     @GetMapping("/user/{id}")

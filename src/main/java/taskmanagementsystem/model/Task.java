@@ -21,6 +21,7 @@ public class Task {
     @Column(nullable = false)
     @NotEmpty(message = "Invalid: task cannot be empty")
     private String task;
+    private String details;
     private Boolean completed;
     private String taskCreatedAt;
     @ManyToOne
