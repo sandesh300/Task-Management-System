@@ -94,8 +94,8 @@
 ```json
 
 {
-  "task": "go to swim",
-  "details": "go to swim"
+  "task": "go to swim in the afternoon",
+  "details": "go to swim in the afternoon"
 }
 ```
 - Response Body:
