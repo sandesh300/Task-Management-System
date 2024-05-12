@@ -1,0 +1,136 @@
+.form-check-input:checked{
+    background-color: #9400FF;
+    border-color: #ffffff;
+}
+
+.form-check-input{
+    border-color: #000000;
+}
+
+
+
+.task-name:hover {
+    color: black;
+}
+
+.icon {
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: black;
+}
+
+.task-item input[type="checkbox"] {
+    background-color: #ffffff;
+    border-color: #2b2727;
+  }
+
+  
+  
+  .task-text {
+    font-size: 25px;
+    margin-left: 1rem;
+  }
+  
+  .detail-card {
+    border-right: 2px solid #dee2e6; /* Add a border on the right side of the card body */
+}
+
+@media (max-width: 576px) {
+    .detail-card {
+        border-right: none; /* Remove the border on smaller screens */
+    }
+}
+
+
+.signup-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-form input[type="text"],
+  .signup-form input[type="password"] {
+    border-radius: 5px;
+  }
+  
+  .signup-form button {
+    border-radius: 5px;
+  }
+  
+  .center-in-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .signup-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+  }
+  
+  .signup-form {
+    background-color: #fff;
+  }
+  
+  .signup-form form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .signup-form input[type="text"],
+  .signup-form input[type="password"] {
+    border-radius: 0.25rem;
+  }
+  
+  .signup-form button {
+    border-radius: 0.25rem;
+  }
+  
+  .invalid-feedback {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #dc3545;
+  }
+  
+  /* login.css */
+
+.login-page {
+    background-color: #f7f7f7;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-form {
+    border-radius: 10px;
+  }
+  
+  .login-form h2 {
+    color: #333;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    border-radius: 5px;
+  }
+  
+  .login-form input[type="submit"] {
+    border-radius: 5px;
+    background-color: #343a40;
+  }
+  
+  .login-form input[type="submit"]:hover {
+    background-color: #212529;
+  }
+  
+  .login-form .invalid-feedback {
+    color: red;
+  }
+  
